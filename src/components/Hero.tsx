@@ -39,7 +39,7 @@ export default function Hero() {
                 <Compass size={20} className="text-white/60" />
               </div>
               <p className="text-white/50 text-[11px] leading-relaxed font-medium">
-                Global Education Council is a premier platform that transforms your international career aspirations into reality through world-class education.
+                World Passport is a premier platform that transforms your international career aspirations into reality through world-class education.
               </p>
             </div>
 
@@ -74,7 +74,7 @@ export default function Hero() {
                     <Globe size={16} />
                   </div>
                   <div>
-                    <div className="text-white font-bold text-sm">University Finder</div>
+                    <span className="font-display font-bold text-base text-white block">World Passport</span>
                     <div className="text-white/40 text-[9px] tracking-tight uppercase font-bold">Live Admissions 2024</div>
                   </div>
                 </div>

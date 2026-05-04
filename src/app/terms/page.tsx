@@ -7,7 +7,7 @@ import { FileText } from 'lucide-react';
 const sections = [
   {
     title: 'Acceptance of Terms',
-    body: 'By accessing or using the Global Education Council website and services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.',
+    body: 'By accessing or using the World Passport website and services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.',
   },
   {
     title: 'Services Provided',
@@ -27,7 +27,7 @@ const sections = [
   },
   {
     title: 'Intellectual Property',
-    body: 'All content on this website — including text, images, logos, and graphics — is the intellectual property of Global Education Council. Reproduction without written permission is prohibited.',
+    body: 'All content on this website — including text, images, logos, and graphics — is the intellectual property of World Passport. Reproduction without written permission is prohibited.',
   },
   {
     title: 'Governing Law',

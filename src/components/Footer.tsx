@@ -37,7 +37,7 @@ export default function Footer() {
             Ready to <span className="text-gradient">Take Aim</span> at Your Future?
           </h2>
           <p className="text-white/50 text-lg mb-8 max-w-xl mx-auto">
-            Join 10,000+ students who trusted Global Education Council to guide them to world-class universities
+            Join 10,000+ students who trusted World Passport to guide them to world-class universities
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/contact">
@@ -61,7 +61,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-4">
               <Logo size={40} animate={false} />
               <div>
-                <span className="font-display font-bold text-base text-white block">Global Education Council</span>
+                <span className="font-display font-bold text-base text-white block">World Passport</span>
                 <span className="text-xs text-primary/70 font-semibold tracking-widest uppercase">Est. 2015</span>
               </div>
             </Link>
@@ -109,7 +109,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/25 text-sm">&copy; {new Date().getFullYear()} Global Education Council. All rights reserved.</p>
+          <p className="text-white/25 text-sm">&copy; {new Date().getFullYear()} World Passport. All rights reserved.</p>
           <div className="flex gap-5">
             {['Privacy Policy', 'Terms of Service'].map((t) => (
               <Link key={t} href="#" className="text-white/25 text-sm hover:text-primary transition-colors">{t}</Link>

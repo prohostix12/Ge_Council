@@ -40,8 +40,8 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
             <Logo size={40} animate />
             <div className="hidden sm:block leading-tight">
-              <span className="font-display font-bold text-base text-white block tracking-tight">Global Education</span>
-              <span className="text-[10px] text-primary/80 font-semibold tracking-[0.18em] uppercase">Council</span>
+              <span className="font-display font-bold text-base text-white block tracking-tight">World</span>
+              <span className="text-[10px] text-primary/80 font-semibold tracking-[0.18em] uppercase">Passport</span>
             </div>
           </Link>
 
