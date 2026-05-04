@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --primary: #3B82F6;
+  --primary: #0066FF;
   --accent: #FF3B3B;
   --bg: #000000;
+  --card-glass: rgba(0, 0, 0, 0.2);
 }
 
 * { box-sizing: border-box; padding: 0; margin: 0; }
@@ -23,32 +24,22 @@ body {
 ::-webkit-scrollbar-thumb { background: #3B82F6; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #60A5FA; }
 
-.text-gradient {
-  background: linear-gradient(135deg, #3B82F6, #60A5FA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.text-gradient-red {
-  background: linear-gradient(135deg, #FF3B3B, #FF7070);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.premium-glass {
+  background: var(--card-glass);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2.5rem;
 }
 
-.glass {
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(59,130,246,0.12);
+.hero-headline {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 800;
 }
 
-/* Card using logo navy + blue border */
-.dark-card {
-  background: rgba(14,30,62,0.90);
-  border: 1px solid rgba(59,130,246,0.18);
-  border-radius: 1.25rem;
-  backdrop-filter: blur(10px);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+.btn-pill {
+  @apply px-8 py-4 rounded-full font-bold transition-all duration-300 flex items-center gap-2;
 }
 .dark-card:hover {
   border-color: rgba(59,130,246,0.40);
@@ -84,3 +75,19 @@ body {
 .animate-float   { animation: float 5s ease-in-out infinite; }
 .animate-marquee { animation: marquee 35s linear infinite; }
 .animate-blob    { animation: blob 8s ease-in-out infinite; }
+
+.premium-btn {
+  background: linear-gradient(135deg, #0066FF 0%, #60A5FA 100%);
+  color: white;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px -5px rgba(0, 102, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.premium-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -10px rgba(0, 102, 255, 0.6);
+  filter: brightness(1.1);
+}

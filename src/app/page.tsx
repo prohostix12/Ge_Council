@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main className="relative pt-[60px]">
+    <main className="relative">
 
       {/* Fixed full-page background — navy base + world map on top */}
       <div className="fixed inset-0 pointer-events-none" style={{ zIndex: -1 }}>

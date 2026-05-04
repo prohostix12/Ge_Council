@@ -49,18 +49,16 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center">
             <div className={`flex items-center gap-1 px-2 py-1.5 rounded-full border transition-all duration-500 ${
               scrolled
-                ? 'bg-[#112549]/90 border-primary/20 backdrop-blur-xl shadow-lg shadow-blue-950/60'
-                : 'bg-[#112549]/40 border-white/10 backdrop-blur-md'
+                ? 'bg-black/80 border-white/10 backdrop-blur-xl shadow-2xl'
+                : 'bg-transparent border-transparent'
             }`}>
               {links.map((link) => (
                 <Link key={link.href} href={link.href}
-                  className={`relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
-                    pathname === link.href ? 'text-white' : 'text-white/50 hover:text-white/90'
-                  }`}>
+                  className="relative px-5 py-2 text-sm font-medium rounded-full transition-all duration-300 text-white">
                   {pathname === link.href && (
                     <motion.div layoutId="nav-pill"
-                      className="absolute inset-0 rounded-full bg-white/10 border border-white/15"
-                      transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }} />
+                      className="absolute inset-0 rounded-full bg-white/10 border border-white/10"
+                      transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }} />
                   )}
                   <span className="relative z-10">{link.label}</span>
                 </Link>
@@ -69,22 +67,19 @@ export default function Navbar() {
           </nav>
 
           {/* Right CTAs */}
-          <div className="hidden md:flex items-center gap-2 flex-shrink-0">
-            <Link href="/contact" className="px-4 py-2 text-sm font-medium text-white/50 hover:text-white transition-colors">
+          <div className="hidden md:flex items-center gap-4 flex-shrink-0">
+            <Link href="/contact" className="text-sm font-medium text-white/40 hover:text-white transition-colors">
               Login
             </Link>
-            <Link href="/contact">
-              <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
-                className="px-5 py-2 rounded-full text-sm font-semibold text-white border border-white/20 hover:border-primary/60 hover:bg-primary/20 backdrop-blur-sm transition-all">
-                Partner With Us
-              </motion.button>
+            <Link href="/contact" className="premium-btn !px-6 !py-2.5 !text-sm">
+              Partner With Us
             </Link>
           </div>
 
           {/* Mobile toggle */}
           <button onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/70">
-            {mobileOpen ? <X size={16} /> : <Menu size={16} />}
+            className="md:hidden w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white">
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </motion.header>
@@ -92,22 +87,21 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}
-            className="fixed top-20 left-4 right-4 z-40 backdrop-blur-xl rounded-2xl shadow-2xl p-4 flex flex-col gap-1"
-            style={{ background: 'rgba(17,37,73,0.97)', border: '1px solid rgba(59,130,246,0.28)' }}
+            initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-x-4 top-24 z-40 bg-black/90 border border-white/10 backdrop-blur-2xl rounded-3xl p-6 flex flex-col gap-2 shadow-2xl"
           >
             {links.map((link) => (
               <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)}
-                className={`px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-                  pathname === link.href ? 'text-primary bg-primary/10' : 'text-white/60 hover:text-white hover:bg-white/5'
+                className={`px-4 py-3 rounded-xl text-lg font-medium transition-all ${
+                  pathname === link.href ? 'text-[#0066FF] bg-[#0066FF]/10' : 'text-white/60 hover:text-white'
                 }`}>{link.label}</Link>
             ))}
-            <div className="pt-3 mt-1 border-t border-white/8 flex gap-2">
-              <Link href="/contact" onClick={() => setMobileOpen(false)} className="flex-1">
-                <button className="w-full py-2.5 rounded-xl text-sm text-white/50 border border-white/10">Login</button>
+            <div className="pt-4 mt-2 border-t border-white/10 flex flex-col gap-3">
+              <Link href="/contact" onClick={() => setMobileOpen(false)} className="text-center py-3 text-white/60">
+                Login
               </Link>
-              <Link href="/contact" onClick={() => setMobileOpen(false)} className="flex-1">
-                <button className="w-full py-2.5 rounded-xl text-sm font-semibold text-white bg-primary/80 hover:bg-primary transition-colors">Partner With Us</button>
+              <Link href="/contact" onClick={() => setMobileOpen(false)} className="premium-btn w-full text-center py-3">
+                Partner With Us
               </Link>
             </div>
           </motion.div>
